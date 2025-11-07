@@ -1,0 +1,25 @@
+/**
+ * @summary
+ * Main API router with version management
+ * Handles routing for different API versions
+ *
+ * @module routes
+ */
+
+import { Router } from 'express';
+import v1Routes from './v1';
+
+const router = Router();
+
+/**
+ * @summary Version 1 routes (current stable)
+ * Base path: /api/v1
+ */
+router.use('/v1', v1Routes);
+
+/**
+ * @summary Future versions can be added here
+ * Example: router.use('/v2', v2Routes);
+ */
+
+export default router;
